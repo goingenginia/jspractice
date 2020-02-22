@@ -1,0 +1,143 @@
+html {
+  font-size: 62.5%;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
+body {
+  font-size: 2rem;
+}
+
+/* ヘッダー */
+header {
+  width: 100%;
+  height: 50px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  background-color: white;
+}
+.nav_main {
+  display: flex;
+  align-items: center;
+  width: 1200px;
+  max-width: calc(100% - 40px);
+  margin: 0 auto;
+}
+.nav_main-list {
+  display: flex;
+  width: 550px;
+  margin: 0 0 0 auto;
+  justify-content: space-between;
+}
+.nav_main-list > li {
+  width: 100px;
+  font-size: 1.5rem;
+}
+.nav_main-list > li > a {
+  text-decoration: none;
+  color: black;
+}
+.nav_main-hbg {
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
+  border-radius: 3px;
+  padding: 8px 4px;
+  box-sizing: border-box;
+  z-index: 30;
+}
+
+.bg_top {
+  background-color: black;
+  width: 20px;
+  height: 1px;
+  margin-bottom: 5px;
+}
+.bg_mid {
+  background-color: black;
+  width: 20px;
+  height: 1px;
+  margin-bottom: 5px;
+}
+.bg_btm {
+  background-color: black;
+  width: 20px;
+  height: 1px;
+}
+.nav_main-hbgmenu {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  width: 350px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 20;
+  display: none;
+  color: white;
+}
+
+.nav_main-hbgmenu-a {
+  position: absolute;
+  top: 10%;
+  left: -10%;
+  list-style-type: none;
+}
+.nav_main-hbgmenu-b {
+  position: absolute;
+  top: 20%;
+  left: -30%;
+  list-style-type: none;
+}
+.nav_main-hbgmenu-c {
+  position: absolute;
+  top: 30%;
+  left: -50%;
+  list-style-type: none;
+}
+.nav_main-hbgmenu-d {
+  position: absolute;
+  top: 40%;
+  left: -70%;
+  list-style-type: none;
+}
+.nav_main-hbgmenu-e {
+  position: absolute;
+  top: 50%;
+  left: -90%;
+  list-style-type: none;
+}
+
+main {
+  height: 2000px;
+}
+
+/* jqueryで実行 */
+.hbg_border--top {
+  transform: translateY(8px) rotate(-45deg);
+  transition: 0.7s;
+}
+.hbg_border--mid {
+  background-color: transparent;
+}
+.hbg_border--btm {
+  transform: translateY(-4px) rotate(45deg);
+  transition: 0.7s;
+}
+.hbg_border-fadeIn {
+  left: 50%;
+  transition: 0.7s;
+}
+.top_btn {
+  display: none;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 50px;
+  height: 50px;
+  background-color: #cbffd3;
+  text-align: center;
+  line-height: 50px;
+}
