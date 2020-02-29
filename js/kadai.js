@@ -1,4 +1,5 @@
 $(function() {
+  let duration = 0;
   //ハンバーガー
   $(".nav_main-hbg").on("click", e => {
     $(".nav_main-hbgmenu").fadeToggle(500);
@@ -7,7 +8,15 @@ $(function() {
     $(".bg_btm").toggleClass("hbg_border--btm");
     $(".nav_main-hbgmenu")
       .find("li")
-      .toggleClass("hbg_border-fadeIn");
+      .each((index, value) => {
+        $(value)
+          .delay(duration)
+          .queue(function() {
+            $(this).toggleClass("hbg_border-fadeIn").dequeue;
+          });
+        duration = duration + 100;
+      });
+    duration = 0;
   });
   // フェードイン
   $(window).on("scroll", e => {
@@ -29,5 +38,51 @@ $(function() {
       },
       3000
     );
+  });
+  // アコーディオン
+  $(".aco-title").on("click", e => {
+    if (
+      !$(e.currentTarget)
+        .next()
+        .is(":visible")
+    ) {
+      $(".aco-cnt:visible").slideUp();
+      $(e.currentTarget)
+        .next()
+        .slideDown();
+    } else if (
+      $(e.currentTarget)
+        .next()
+        .is(":visible")
+    ) {
+      $(e.currentTarget)
+        .next()
+        .slideUp();
+    }
+  });
+  // スライダー
+  let imgCurrent = 0;
+  $(".slider_right").on("click", e => {
+    imgCurrent += 1;
+    if (imgCurrent === 1) {
+      $(".slider_left").css("display", "block");
+      $(".slider_row").animate({ left: `${imgCurrent * -200}px` }, 500);
+    } else if (imgCurrent === 4) {
+      $(".slider_row").animate({ left: `${imgCurrent * -200}px` }, 500);
+      $(".slider_right").css("display", "none");
+    } else {
+      $(".slider_row").animate({ left: `${imgCurrent * -200}px` }, 500);
+    }
+  });
+  $(".slider_left").on("click", e => {
+    imgCurrent -= 1;
+    if (imgCurrent === 0) {
+      $(".slider_row").animate({ left: `${imgCurrent * -200}px` }, 500);
+      $(".slider_right").css("display", "block");
+      $(".slider_left").css("display", "none");
+    } else {
+      $(".slider_row").animate({ left: `${imgCurrent * -200}px` }, 500);
+      $(".slider_right").css("display", "block");
+    }
   });
 });

@@ -25,6 +25,7 @@ header {
   max-width: calc(100% - 40px);
   margin: 0 auto;
 }
+
 .nav_main-list {
   display: flex;
   width: 550px;
@@ -78,7 +79,6 @@ header {
   display: none;
   color: white;
 }
-
 .nav_main-hbgmenu-a {
   position: absolute;
   top: 10%;
@@ -88,33 +88,109 @@ header {
 .nav_main-hbgmenu-b {
   position: absolute;
   top: 20%;
-  left: -30%;
+  left: -10%;
   list-style-type: none;
 }
 .nav_main-hbgmenu-c {
   position: absolute;
   top: 30%;
-  left: -50%;
+  left: -10%;
   list-style-type: none;
 }
 .nav_main-hbgmenu-d {
   position: absolute;
   top: 40%;
-  left: -70%;
+  left: -10%;
   list-style-type: none;
 }
 .nav_main-hbgmenu-e {
   position: absolute;
   top: 50%;
-  left: -90%;
+  left: -10%;
   list-style-type: none;
 }
 
+.acodion {
+  margin-top: 100px;
+}
+.aco-title {
+  background-color: chartreuse;
+  border: 1px solid black;
+}
+.aco-cnt {
+  display: none;
+  background-color: coral;
+  border: 1px solid black;
+}
+
+.slider {
+  width: 200px;
+  height: 200px;
+  margin: 100px 0 0 100px;
+  position: relative;
+  overflow: hidden;
+}
+.slider_row {
+  width: 1000px;
+  height: 200px;
+  position: absolute;
+  display: flex;
+}
+.slider_img {
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  line-height: 200px;
+}
+.slider_yajirushi {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+}
+.slider_left {
+  position: absolute;
+  top: 90px;
+  left: 0px;
+  background-color: lightgreen;
+  display: none;
+}
+.slider_right {
+  position: absolute;
+  top: 90px;
+  left: 180px;
+  background-color: lightgreen;
+}
+.slider_one {
+  background-color: darkgray;
+}
+.slider_two {
+  background-color: darkorchid;
+}
+.slider_three {
+  background-color: deeppink;
+}
+.slider_four {
+  background-color: deepskyblue;
+}
+.slider_five {
+  background-color: gold;
+}
 main {
   height: 2000px;
 }
 
 /* jqueryで実行 */
+
+.nav_main-logo {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 100px;
+  left: 100px;
+  bottom: 100px;
+  right: 100px;
+  z-index: 50;
+  color: white;
+}
 .hbg_border--top {
   transform: translateY(8px) rotate(-45deg);
   transition: 0.7s;
